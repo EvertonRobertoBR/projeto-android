@@ -1,0 +1,228 @@
+/*  #024059
+    #026873
+    #04BF8A
+    #025940
+    #03A64A */
+
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* basicamente isso permiti a fonte destaque funcionar */
+
+@font-face{ /* permiti agente colocar fontes externas */
+    font-family:'Android'; /* dentro da font family estamos atribuindo a font android. android foi o nome que eu quiz criar */
+    src:url('/fontes/idroid.otf') format('opentype'); /* caso o style estivesse dentro de uma pasta voce precisaria usar ../ */ /* url fica o nome da fonte que voce baixou */
+    font-weight: normal;}
+
+    :root{ /* cria variaveis dentro do css */
+        --cor0:#024059;
+        --cor1:#026873; /* --cor01 e o nome que voce escolhe para a sua variavel */
+        --cor2:#04BF8A;
+        --cor3:#025940;
+        --cor4:#03A64A;
+        --cor5: #025939;
+        --cor6:#027333 ;
+        --cor7:#03A63C ;
+        --cor8: #04D939;
+        --font-padrão: Arial,Verdana, Helvetica, sans-serif;
+        --font-destaque:'Bebas Neue', sans-serif;
+        --font-android:'android',sans-serif;
+        }
+
+*{   /* esse asteristico esta marcando todos os elementos do HTML,ou seja, ta marcando o h1, main, article etc....,ou seja, vamos fazer modificações globais em todos os elemntos */
+    margin: 0px; /* margem */
+    padding: 0px; /* preenchimento */
+    /* esse codigo vai corrigir alguma falhas no site visualmente */
+}
+
+body{
+    background-color: #92eebb;
+    font-family: var(--font-padrão);
+    
+}
+
+div.video{ /* todos esses codigos são necessarios para adaptar o video a qualquer dispositivo*/
+    background-color: violet;
+    padding: 20px;
+    margin: 0px -20px 30px -20px; /* vai fazer com que o fundo rosa fique alinhado com a parte branca do site */ /* 0px cima , -20px direita, 30px baixo, -20px esquerda */ 
+    position: relative; 
+    padding-bottom:56.5%; /* para alterar a borda preta que fica quando damos play no video, basta alterar a porcetagem do padding-bottom */
+}
+
+div.video > iframe{   /* todos esses codigos são necessarios para adaptar o video a qualquer dispositivo*/    /* iframe que é o nosso video que esta dentro da (class = video) e dentro da div   */
+    position: absolute; 
+    top: 5%;  /* vai criar um espaço vazio na parte de cima do video */
+    left: 5%; /* vai criar um espaço vazio no canto esquerdo do video */
+    width:90% ;
+    height:90% ;
+
+}
+
+a.link::after{ /* depois dos link(a)tag */ /* link e o nome da nossa class */
+    content: '\1F517\00A0'; /* vai criar um espaço vazio para direita */
+
+}
+
+    
+header{
+    
+    min-height: 150px; /* altura minima */
+    text-align: center;
+    padding-top: 30px; /* vai expandir a parte de cima da cor de fundo (verde) */
+    background-image: linear-gradient(to Bottom ,#034159,#025951,#02735E,#038C3E,#0CF25D)
+    
+    
+}
+
+
+
+header > p {
+    color: white;
+    font-family: var(--font-padrão);
+    font-size: 1.2em; /* vai aumentar o tamanha da letra de (  p) que esta dentro de header */
+    max-width: 500px; /* vai diminuir a largura/comprimemto do texto */
+    margin: auto; /* vai centralizar o texto */
+    padding-left:10px ;
+    padding-right:10px ;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+    /* caso os links home,noticias,fale conosco,curiosidade, tivesse quebrado na menor resolução da tela voce coloca esse codigo -> margin-bottom: 30px;*/
+ 
+}
+ 
+header > h1{
+    color:white;
+    font-family: var(--font-destaque);
+    margin-bottom:20px ; /* isso vai criar uma distancia entre h1 e (p) que esta dentro de header */
+    font-size: 3em; /* vai aumentar o tamanha da letra de h1 dentro de header */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+    
+    
+    
+}
+nav{
+    
+    background-color:#0CF25D;
+    padding:10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.233);
+    
+    
+}
+nav a{
+    color: white;
+    padding: 10px;
+    text-decoration: none; /* vai tirar o sublinhado dos links */
+    font-weight: bold; /* vai intensificar a cor branca dos links */
+    border-radius: 5px; /* vai criar uma bordinha no formato redondo */
+    transition-duration: 1s; /* vai levar 1 segundo para a cor da letra e o fundo dos links mudarem de cor. eu não gostei */
+
+
+}
+nav a:hover{ /* tradução -> quando eu passar o mouse por cima dos links que estão dentro de nav */
+    background-color:#032514 ;
+    color: #0CF25D;
+}
+main{
+    background-color: white;
+    max-width: 1000px; /* isso vai deixar o conteudo/texto adapetavel a qualquer dispositivo */
+    min-width: 300px; /* isso vai deixar o conteudo/texto adapetavel a qualquer dispositivo */ 
+    margin: auto; /* isso vai deixar o conteudo/texto adapetavel a qualquer dispositivo */
+    padding: 20px;
+    box-shadow: 0px 0px 10px black;
+    margin-bottom: 30px; /* bottom significa baixo */   /* vai fazer com que a borda branca no final do texto não encontes na cor verde escuro */
+    border-bottom-left-radius: 10px ; /* a borda de baixo no canto esquedo vai ficar redonda no tamanho de 10px */
+    border-bottom-right-radius: 10px; /* a borda de baixo no canto direito vai ficar redonda no tamanho de 10px */
+
+}
+main h1{
+   
+    color:#09532e;
+    font-family: var(--font-android);
+}
+
+main h2{
+    
+    font-family: var(--font-android);
+    color: #09532e;
+    font-size: 1.3em; /* vai aumentar o tamanho da letra */
+    background-image: linear-gradient(to right ,#04D939, transparent); /* vai colocar uma cor de fundo no h2 e conforme ele vai indo para a direita vai perdendo força,por causa do comando transparent */
+    text-indent: 10px; /* vai colocar um espaço no inicio de h2 */  
+}
+
+aside h3{
+    color:white;
+    background-color: #032514;
+    padding: 10px;
+    margin: -20px -20px 0px -20px; /* -20px cima, -20px direita, 0px baixo, -20px esquerda */ /* esse codigo vai fazer com que a cor verde escuro fica alinhada com a cor verde claro */
+    border-radius: 10px 10px 0px 0px; /* 10px canto superior esquerdo, 10px canto superior direito, 0px canto inferior direto, 0px canto inferior esquerdo */
+}
+main p{
+    margin:15px 0px 15px 0px; /* 15px cima,0px direita,15px baixo,0px esquerda. esse codigo server para criar espaços vazios nos paragrafos*/
+    text-align: justify; /* esse codigo vai alinhar todos os paragrafos,ou seja, ele vai organizar o texto. sempre use esse comando */
+    font-size: 1.1em; /* vai aumentar o tamanho da letra que estão dentro do paragrafo */
+    text-indent: 30px; /* vai adcionar um espaço no inicio de cada paragrafo */
+    line-height:2em ; /* vai colocar um espaço entra as linhas que estão no paragrafo */
+}
+
+main strong{
+    color:var(--cor8);
+    font-weight: bold; /* intensifica a cor */
+   
+    
+    
+}
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color:#10442a;
+    background-color: var(--cor8);
+    padding: 2px 8px; /* 2px -> altura e 8px -> largura */
+}
+
+main a:hover{ /* quando eu passar o mouse por cima dos links que estão dentro de main */
+    text-decoration: underline; /* vai colocar um underline */
+    color: red;
+
+}
+
+main img {
+    width: 100%; /* isso vai deixar  as imagens que estão dentro de main adapetaveis a qualquer dispositivo */
+}
+main img.pequena{ /* a imagem que esta dentro de main com a class pequena. essa seria a tradução */
+    max-width:350px; /* server para diminuir a largura da imagem, não o tamanho. basicamente a imagem vai se adaptar conferme a resolução da tela*/
+    display: block; /* server para criar um elemento em bloco para a imagem em um nova linha e ocupa toda a largura */
+
+    margin: auto; /* centraliza a imagem */
+}
+
+aside{
+    background-color: #096437;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.274);
+}
+
+aside > ul{
+    list-style-position: outside; /* esse codigo é usado caso as bolinhas que estão na lista ficassem fora do fundo verde */ 
+    columns: 2; /* vai dividir a lista */
+    list-style-type: '\2714\00A0\00A0'; /* esse codigo server para colocar o emoji chamado de check. e necessario usar aspas e colocar a barra invertida */ /* 00A0 e para colocar espaços vazios entre o check eo texto */
+    
+}
+
+footer{
+    color: white;
+    background-color: #032514;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 10px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover{ /* quando eu passar o mouse por cima dos links que estão dentro de footer */
+    color: red;
+    background-color:black;
+    text-decoration: underline;
+    
+}
